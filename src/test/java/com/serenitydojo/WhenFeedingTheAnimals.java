@@ -25,6 +25,14 @@ public class WhenFeedingTheAnimals {
     }
 
     @Test
+    public void shouldFeedPremiumHamstersLettuce() {
+        Feeder feeder = new Feeder();
+
+        String food = feeder.feeds("Hamster", true);
+
+        Assert.assertEquals("Lettuce", food);
+    }
+    @Test
     public void shouldFeedDogsDogFood() {
         Feeder feeder = new Feeder();
 
@@ -32,7 +40,14 @@ public class WhenFeedingTheAnimals {
 
         Assert.assertEquals("Dog Food", food);
     }
+    @Test
+    public void shouldFeedPremiumDogsDeluxeDogFood() {
+        Feeder feeder = new Feeder();
 
+        String food = feeder.feeds("Dog", true);
+
+        Assert.assertEquals("Deluxe Dog Food", food);
+    }
     @Test
     public void shouldFeedPremiumCatsPremiumFood() {
         Feeder feeder = new Feeder();
